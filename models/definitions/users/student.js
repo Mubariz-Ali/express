@@ -22,6 +22,6 @@ const student = sequelize.define('student', {
     timestamps:true,
     paranoid:true,
     sequelize,
-    modelName: "users"
+    modelName: "student"
 })
 module.exports = student;

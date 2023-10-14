@@ -1,12 +1,27 @@
-const { userController } = require(".");
+const studentService = require('../service/studentService');
+const userController = require('./userController');
 
 module.exports = {
-    createUser: async (req, res) => {
-        const {firstName, lastName, email} = req.body;
-        const {semester, department, rollNo} = req.body;
-        // change values with the key value pair
-        const user = await userController.createUser({firstName,lastName,email})
-        const student = await studentService.createUsers({semester, department, rollNo})
-        res.send(data);
+    getStudents: async (req, res) => {
+      const data = await studentService.getStudents();
+      res.send(data);
     },
-}
+    createStudents: async (req, res) => {
+        console.log(req.body);
+      const { firstName, lastName, email, rollNo, semester, department } = req.body;
+      const user = await userController.createUser({
+        firstName: firstName,
+        lastName: lastName,
+        email: email,
+      });
+      const student = await studentService.createStudents({
+        userID: user.id,
+        rollNo: Student.rollNo,
+        semester: Student.semester,
+        department: Student.department,
+      });
+      console.log(student);
+      res.send(student);
+      //
+    },
+  };

@@ -5,8 +5,8 @@ module.exports = {
         const data = await userService.getUsers()
         res.send(data);
     },
-    createUser: async (req, res) => {
+    createUser: async (req) => {
         const data = await userService.createUsers(req.body)
-        res.send(data);
+        return data;
     },
 }

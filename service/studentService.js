@@ -6,7 +6,6 @@ module.exports = {
         return result;
     },
     createStudents: async(data) => {
-        console.log(data);
         const result = await models.student.create(data)
         return result;
     }

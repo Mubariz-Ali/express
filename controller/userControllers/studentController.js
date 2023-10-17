@@ -1,4 +1,4 @@
-const studentService = require('../service/studentService');
+const studentService = require('../../service/studentService');
 const userController = require('./userController');
 
 
